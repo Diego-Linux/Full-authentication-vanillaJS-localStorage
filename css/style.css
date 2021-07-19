@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', 'Roboto', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    background: rgb(15, 15, 15);
+}
+
+.left {
+    width: 65%;
+    /* background: rgb(46, 40, 40);  */
+}
+
+.left img {
+    height: 100vh;
+    width: 100%;
+}
+
+.right {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+    padding:5%;
+}
+
+.right h2 {
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.right .input-div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.right .input-div label {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.right .input-div input {
+    padding: 13px 13px 13px 53px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    outline: none;
+    transition: all ease 0.5s;
+    background: transparent;
+    color: #fff;
+}
+
+.right .input-div input:focus {
+    border: 1px solid #ff0099;
+    box-shadow: 0px 0px 5px #ff0099;
+}
+
+.right .input-div i.fa {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 40px;
+    top: 29px;
+    color: #ff0099;
+}
+
+.right .input-div button {
+    padding: 13px;
+    background: #ff0099;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+#logout {
+    outline: none;
+    color: red;
+    border: none;
+    cursor: pointer;
+    font-size:3rem;
+    margin-top: 30px;
+}
+
+p {
+    font-weight: bold;
+    color: #fff;
+}
+
+a {
+    color: #ff0099;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 2px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media(max-width:890px) {
+    .left {
+        width: 60%
+    }
+    .right {
+        /* margin:auto; */
+        width: 40%;
+    }
+    .right .div-input input::placeholder {
+        font-size: 12px;
+    }
+}
+
+@media(max-width:750px) {
+    .left {
+        display: none;
+    }
+    .right {
+        width: 23rem;
+    }
+}
+
+@media(max-width:450px) {
+    .right {
+        width: 90%;
+    }
+}

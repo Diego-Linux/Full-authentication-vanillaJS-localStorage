@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Upload Storage</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="img/product.svg" alt="">
+        </div>
+        <div class="right">
+            <h2>New Product</h2>
+            <div class="input-div">
+                <label for="title">Title</label>
+                <input type="text" id="title" placeholder="Product title">
+                <i class="fa fa-tag"></i>
+            </div>
+            <div class="input-div">
+                <label for="price">Price</label>
+                <input type="number" id="price" placeholder="$ 9,99">
+                <i class="fa fa-credit-card"></i>
+            </div>
+            <div class="input-div">
+                <button id="">Create</button>
+            </div>
+            <i id="logout" class="fas fa-sign-out-alt"></i>
+        </div>
+    </div>
+    <script src="js/middleware/notAuth.js"></script>
+</body>
+
+</html>

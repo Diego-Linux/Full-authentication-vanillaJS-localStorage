@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Register Storage</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="img/register.svg" alt="">
+        </div>
+        <div class="right">
+            <h2>Register User</h2>
+            <div class="input-div">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your username">
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="input-div">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="Your best e-mail here">
+                <i class="fa fa-envelope"></i>
+            </div>
+            <div class="input-div">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="At least 6 characters">
+                <i class="fa fa-key"></i>
+            </div>
+            <div class="input-div">
+                <button id="create" onclick="createUser()">Create</button>
+            </div>
+            <div class="input-div">
+                <p>Already have an account? <a href="login.html"> Login</a></p>
+                <br />
+                <a href="#">Forgot password?</a>
+            </div>
+        </div>
+    </div>
+    <script src="js/middleware/auth.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
