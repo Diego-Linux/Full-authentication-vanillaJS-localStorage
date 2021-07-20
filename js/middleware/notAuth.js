@@ -1,17 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
-    if (!(localStorage.getItem('myToken'))) {
-        location.href = "login.html"
-        alert('You are not authenticated')
-    }
+// if the user is not logged in, he cannot access the home screen
+// So this middleware redirects to the login page
+if (!(localStorage.getItem('myToken'))) {
+    location.href = "login.html"
+    alert('You are not authenticated')
+}
 
-    logoutUser = () => {
-        localStorage.removeItem('myToken');
-        location.href = "login.html"
-    }
 
-    document.getElementById('logout')
-        .addEventListener('click', logoutUser)
-})
 
 
 

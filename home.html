@@ -6,38 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Upload Storage</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/records.css">
+    <link rel="stylesheet" href="css/modal.css">
+
+    <title>CRUD</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="left">
-            <img src="img/product.svg" alt="">
+    <header>
+        <h1 class="header-title">Customer registration</h1>
+    </header>
+    <main>
+        <button type="button" class="button blue mobile" id="createCustomer">Register Customer</button>
+        <table id="tableCustomer" class="records">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>New customer</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <form id="form" class="modal-form">
+                    <input type="text" id="name" data-index="new" class="modal-field" placeholder="Customer name" required>
+                    <input type="email" id="email" class="modal-field" placeholder="Customer email" required>
+                </form>
+                <footer class="modal-footer">
+                    <button id="save" class="button blue">Save</button>
+                    <button id="cancel" class="button red">Cancel</button>
+                </footer>
+            </div>
         </div>
-        <div class="right">
-            <!--
-Functionality add product is not ready yet, for now the focus of the project
- is the authentication flow-->
-            <h2>New Product</h2>
-            <div class="input-div">
-                <label for="title">Title</label>
-                <input type="text" id="title" placeholder="Product title">
-                <i class="fa fa-tag"></i>
-            </div>
-            <div class="input-div">
-                <label for="price">Price</label>
-                <input type="number" id="price" placeholder="$ 9,99">
-                <i class="fa fa-credit-card"></i>
-            </div>
-            <div class="input-div">
-                <button id="">Create</button>
-            </div>
-            <i id="logout" class="fas fa-sign-out-alt"></i>
-            <br />
-        </div>
-    </div>
+    </main>
+    <i id="logout" onclick="userLogout()" class="fas fa-sign-out-alt"></i>
+    <footer>
+    </footer>
     <script src="js/middleware/notAuth.js"></script>
+    <script src="js/home.js"></script>
 </body>
 
 </html>

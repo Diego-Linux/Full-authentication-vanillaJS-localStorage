@@ -1,9 +1,10 @@
+// AUTHENTICATION FLOW CODE
 
-getLocalStorage = () => JSON.parse(localStorage.getItem('db_user')) ?? []
-setLocalStorage = (dbUser) => localStorage.setItem('db_user', JSON.stringify(dbUser))
+getLocalUserStorage = () => JSON.parse(localStorage.getItem('db_user')) ?? []
+setLocalUserStorage = (dbUser) => localStorage.setItem('db_user', JSON.stringify(dbUser))
 
 createUser = () => {
-    const dbUser = getLocalStorage()
+    const dbUser = getLocalUserStorage()
 
     const user = {
         name: document.getElementById('name').value,
@@ -20,7 +21,7 @@ createUser = () => {
     }
     else {
         dbUser.push(user)
-        setLocalStorage(dbUser)
+        setLocalUserStorage(dbUser)
         location.href = "login.html"
     }
 
@@ -31,7 +32,7 @@ const hashCode = function (email) {
 }
 
 loginUser = () => {
-    const dbUser = getLocalStorage()
+    const dbUser = getLocalUserStorage()
 
     const user = {
         email: document.getElementById('logemail').value,
@@ -43,7 +44,7 @@ loginUser = () => {
     }).length;
 
     if (userExists) {
-        let expiresIn = '7s';
+        let expiresIn = '7d';
         localStorage.setItem('myToken',
             hashCode(user.email),
             expiresIn);
@@ -55,5 +56,3 @@ loginUser = () => {
         alert('User not found')
     }
 }
-
-
