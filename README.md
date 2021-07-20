@@ -6,7 +6,7 @@ Contains:
 - Login
 - Register
 - Logout
-- Simple middleware
+- Simple middleware (simulating a token, after login take a look at your local storage to better understand)
 - CRUD page
 
 Project based on Teacher Fernando Leonid CRUD, here's the repository and the video for those who want to check it out:
