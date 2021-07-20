@@ -19,6 +19,9 @@ createUser = () => {
     if (userExists) {
         alert('E-mail already exists')
     }
+    else if (user.password.length < 6) {
+        alert('Password must be contain at least 6 characters')
+    }
     else {
         dbUser.push(user)
         setLocalUserStorage(dbUser)
@@ -26,15 +29,24 @@ createUser = () => {
     }
 
 }
+// GENERATE TOKEN CODE
 
-const hashCode = function (email) {
-    return email.split("").reduce(function (a, b) { a = ((a << 5) - a) + b.charCodeAt(0); return a & a }, 0);
+//NOTE: Don't use this "token" in a real application, it's not safe
+function decToHex(dec) {
+    return (dec.toString(16)).substr(-2)
 }
+
+getToken = () => {
+    let arr = new Uint8Array((57.7) / 3)
+    window.crypto.getRandomValues(arr)
+    return Array.from(arr, decToHex).join('')
+}
+// END GENERATE TOKEN CODE
 
 loginUser = () => {
     const dbUser = getLocalUserStorage()
 
-    const user = {
+    let user = {
         email: document.getElementById('logemail').value,
         password: document.getElementById('logpassword').value,
     }
@@ -44,14 +56,12 @@ loginUser = () => {
     }).length;
 
     if (userExists) {
-        let expiresIn = '7d';
         localStorage.setItem('myToken',
-            hashCode(user.email),
-            expiresIn);
+            getToken());
 
         localStorage.getItem('myToken');
 
-        location.href = "home.html"
+        location = "home.html"
     } else {
         alert('User not found')
     }

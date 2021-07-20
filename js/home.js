@@ -1,5 +1,4 @@
 // HOME PAGE CODE =>
-
 const openModal = () => document.getElementById('modal')
     .classList.add('active')
 
